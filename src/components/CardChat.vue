@@ -1,7 +1,6 @@
 <template>
-  <div class="cardChat border border-secondary">
+  <div ref="chatContainer" class="cardChat border border-secondary">
     <div
-      id="scrollableDiv"
       class="msg d-flex flex-column"
       v-for="(mensaje, index) in mensajes"
       :key="index"
@@ -35,6 +34,14 @@ export default {
   name: "CardChat",
   props: {
     mensajes: Array,
+  },
+  watch: {
+    mensajes() {
+      this.$nextTick(() => {
+        this.$refs.chatContainer.scrollTop =
+          this.$refs.chatContainer.scrollHeight;
+      });
+    },
   },
 };
 </script>
