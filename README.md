@@ -1,4 +1,4 @@
-# m6-s5-d16-desafio
+# m6-d6-consumo-api
 
 ## Project setup
 ```
